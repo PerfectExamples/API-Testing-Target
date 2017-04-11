@@ -12,6 +12,7 @@ import Foundation
 
 #if os(Linux)
 	import SwiftGlibc
+	import LinuxBridge
 #else
 	import Darwin
 #endif
@@ -30,7 +31,9 @@ extension File {
 		let _ = fcntl(fd, F_SETFL, flags | O_NONBLOCK)
 		var one = Int32(1)
 		setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &one, UInt32(MemoryLayout<Int32>.size))
-		setsockopt(fd, SOL_SOCKET, SO_NOSIGPIPE, &one, UInt32(MemoryLayout<Int32>.size));
+		#if os(OSX)
+			setsockopt(fd, SOL_SOCKET, SO_NOSIGPIPE, &one, UInt32(MemoryLayout<Int32>.size));
+		#endif
 	}
 }
 

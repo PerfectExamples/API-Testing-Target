@@ -165,6 +165,10 @@ routes.append(["method":"get", "uri":"/", "handler":Handlers.stdHTML])
 
 This API also contains some simple HTML to demonstrate previewing the raw source and rendered code within Postman or equivalent.
 
+## How this project was built
+
+This project was built from a Swift scaffolding application, [Clingon](https://github.com/iamjono/clingon). The JSON used to create the starting point was [this file](https://github.com/iamjono/clingon/blob/master/demos/APITesting.json), and then the business logic added. Clingon is free and open sourced just like Perfect.
+
 
 ## Issues
 

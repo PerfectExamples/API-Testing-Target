@@ -28,6 +28,7 @@ extension Handlers {
 						let n = Test(name as? String ?? "")
 						// Add it to the array
 						userArray.append(n)
+						out["id"] = n.id
 						out["error"] = "none"
 					}
 				} catch {
