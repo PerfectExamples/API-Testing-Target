@@ -70,3 +70,5 @@ Package.swift.orig
 .packages_lin
 .build_lin
 *.log
+Package.pins
+Package.resolved
